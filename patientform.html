@@ -1,360 +1,226 @@
-<!--trigger for browser mode start of html file-->
 <!DOCTYPE html>
-<!--head section of html file-->
-<!-- declares english as default language of html document and starts head--> <html lang="en"><head>
- <!--specifies character encoding dor html document--> <meta charset="utf-8">
-  <!--This gives the browser instructions on how to control the page's dimensions and scaling.
-The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
-The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--the page title that shows up on the form-->
-      <title>Patient Registration Form</title>
-  <!--html tag used to link externat css stylesheet to a html document-->
- <!--update style.css to new name of css stylesheet--> <link rel='stylesheet' href='newstyle.css' type='text/css' />
-  <!--<script> element either contains scripting statements, or it points to an external script file through the src attribute.-->
-   <!--calls javascript function to display current date--> <script src="script.js"></script>
-  </head>
-  <!--starts body section of html visible content layer-->
-<!--triggers displayDate() JavaScript--> <body onload="displayDate()">
-  <!--<div> structures the header for website and links logo image to html division-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration Form</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <script src="script.js"></script>
+</head>
+<body onload="displayDate()">
   <div id="header">
-<img src="./Customlogo.png" alt="Houston Medical Clinic Logo" id="logo">
-    </div>
-  <!-- sets header area size to certain width-->
-        <table width="100%">
-          <!--<tr> defines horizontal form of table-->
-            <tr>
-              <!-- <td> defines a standard data cell in html in this case the header cells-->
-                <td width="20%">
-                    <img src="logo.png" alt="Medical Logo" width="120">
-                </td>
-              <!--44-50 defines positioning of the title and date area-->
-   <td align="center">
-                    <h1>Houston Care Medical Center</h1>
-                    <h3>Patient Registration Form</h3>
-                </td>
- <td align="right">
-                    <strong>Today is:</strong><br>
-                    <span id="today"></span>
-                </td>
-            </tr>
-        </table>
+    <img src="./Customlogo.png" alt="Houston Medical Clinic Logo" id="logo">
+  </div>
 
-    </div>
-  <!--<hr> creates a horizontal line that breaks into the user input section-->
-    <hr>
-  <!--action attribute dictates destination of form's data if user clicks submit here browser navigates to thankyou.html-->
-   <div id="main">
-        <form action="thanks.html" onsubmit="return reviewForm();">
-                   
-            <table class="formTable">
-                  <!--start of row one of table repersented by tr-->
- <tr>
-   <!--start of first name table data aka td-->
-                    <td>First Name</td>
-                    <td>
-                        <input type="text"
-                            name="firstname"
-                         id="firstname"
-                            maxlength="30"
-                            required>
-                    </td>
-    <!--start of middle initial table data aka td-->
-     <td>Middle Initial</td>
-                    <td>
-                        <input type="text"
-                            name="middle"
-                         id="middle"
-                            maxlength="1"
-                            size="1">
-                    </td>
-    <!--start of last name table data aka td-->
- <td>Last Name</td>
-                    <td>
-                        <input type="text"
-                            name="lastname"
-                         id="lastname"
-                            maxlength="30"
-                            required>
-                    </td>
-                </tr>
-               <!--start of row two of table repersented by tr-->
- <tr>
-                    <td>Date of Birth</td>
-                    <td>
-                        <input type="date"
-                            name="dob"
-                         id="dob"
-                            required>
-                    </td>
-<td>Social Security</td>
-                    <td>
-                        <input type="password"
-                            maxlength="11"
-                            placeholder="XXX-XX-XXXX"
-                            required>
-                    </td>
-                </tr>
- <tr>
-                    <td>Address Line 1</td>
-                    <td colspan="5">
-                        <input type="text"
-                            name="address1"
-                            maxlength="30"
-                            size="60"
-                            required>
-                    </td>
-                </tr>
-                <tr>
-   <td>Address Line 2</td>
-                    <td colspan="5">
-                        <input type="text"
-                            name="address2"
-                            maxlength="30"
-                            size="60">
-                    </td>
-                </tr>
-  <tr>
+  <table width="100%">
+    <tr>
+      <td width="20%">
+        <img src="logo.png" alt="Medical Logo" width="120">
+      </td>
+      <td align="center">
+        <h1>Houston Care Medical Center</h1>
+        <h3>Patient Registration Form</h3>
+      </td>
+      <td align="right">
+        <strong>Today is:</strong><br>
+        <span id="today"></span>
+      </td>
+    </tr>
+  </table>
 
-                    <td>City</td>
+  <hr>
 
-                    <td>
-                        <input type="text"
-                            maxlength="30"
-                            required>
-                    </td>
- <td>State</td>
-                    <td>
-                        <select required>
-<option value="">Select</option>
-<option>AL</option>
-<option>AK</option>
-<option>AZ</option>
-<option>AR</option>
-<option>CA</option>
-<option>CO</option>
-<option>CT</option>
-<option>DE</option>
-<option>FL</option>
-<option>GA</option>
-<option>HI</option>
-<option>ID</option>
-<option>IL</option>
-<option>IN</option>
-<option>IA</option>
-<option>KS</option>
-<option>KY</option>
-<option>LA</option>
-<option>ME</option>
-<option>MD</option>
-<option>MA</option>
-<option>MI</option>
-<option>MN</option>
-<option>MS</option>
-<option>MO</option>
-<option>MT</option>
-<option>NE</option>
-<option>NV</option>
-<option>NH</option>
-<option>NJ</option>
-<option>NM</option>
-<option>NY</option>
-<option>NC</option>
-<option>ND</option>
-<option>OH</option>
-<option>OK</option>
-<option>OR</option>
-<option>PA</option>
-<option>RI</option>
-<option>SC</option>
-<option>SD</option>
-<option>TN</option>
-<option>TX</option>
-<option>UT</option>
-<option>VT</option>
-<option>VA</option>
-<option>WA</option>
-<option>WV</option>
-<option>WI</option>
-<option>WY</option>
-<option>DC</option>
-<option>PR</option>
+  <div id="main">
+    <form action="thanks.html" method="post" onsubmit="return reviewForm();">
+      <table class="formTable">
+        <tr>
+          <td><label for="firstname">First Name</label></td>
+          <td>
+            <input type="text" name="firstname" id="firstname" maxlength="30" required>
+          </td>
 
-                        </select>
+          <td><label for="middle">Middle Initial</label></td>
+          <td>
+            <input type="text" name="middle" id="middle" maxlength="1" size="1">
+          </td>
 
-                    </td>
-       <td>Zip Code</td>
+          <td><label for="lastname">Last Name</label></td>
+          <td>
+            <input type="text" name="lastname" id="lastname" maxlength="30" required>
+          </td>
+        </tr>
 
-                    <td>
-                        <input type="text"
-                            maxlength="10"
-                            required>
-                    </td>
-           </tr>         
-                <tr>
+        <tr>
+          <td><label for="dob">Date of Birth</label></td>
+          <td>
+            <input type="date" name="dob" id="dob" required>
+          </td>
 
-                    <td>Email</td>
-                    <td>
-                        <input type="email"
-                         name="email"
-                         id="email"
-                                 placeholder="name@domain.tld"      
-                            required>
-                    </td>              
-    <td>Phone</td>
+          <td><label for="ssn">Social Security</label></td>
+          <td>
+            <input type="password" name="ssn" id="ssn" maxlength="11" placeholder="XXX-XX-XXXX" required>
+          </td>
+        </tr>
 
-                    <td>
-                        <input type="tel"
-                         id="phone
-                        
-                            placeholder="000-000-0000">  
-                    </td>
+        <tr>
+          <td><label for="address1">Address Line 1</label></td>
+          <td colspan="5">
+            <input type="text" name="address1" id="address1" maxlength="30" size="60" required>
+          </td>
+        </tr>
 
-                </tr>
-              <tr>
- <td>Medical History</td>
+        <tr>
+          <td><label for="address2">Address Line 2</label></td>
+          <td colspan="5">
+            <input type="text" name="address2" id="address2" maxlength="30" size="60">
+          </td>
+        </tr>
 
-                    <td colspan="5">
+        <tr>
+          <td><label for="city">City</label></td>
+          <td>
+            <input type="text" name="city" id="city" maxlength="30" required>
+          </td>
 
-<input type="checkbox"> Chicken Pox<br>
-<input type="checkbox"> Measles<br>
-<input type="checkbox"> COVID-19<br>
-<input type="checkbox"> Small Pox<br>
-<input type="checkbox"> Tetanus
-                    </td>
-                </tr>
-                <tr>
-                    <td>Gender</td>
-                    <td colspan="5">
+          <td><label for="state">State</label></td>
+          <td>
+            <select name="state" id="state" required>
+              <option value="">Select</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option><option>DC</option><option>PR</option>
+            </select>
+          </td>
 
-<input type="radio" name="gender"> Male
-<input type="radio" name="gender"> Female
-<input type="radio" name="gender"> Other
+          <td><label for="zipcode">Zip Code</label></td>
+          <td>
+            <input type="text" name="zipcode" id="zipcode" maxlength="10" required>
+          </td>
+        </tr>
 
-                    </td>
-                </tr>
-             <!--slider to rate pain--> 
-              <tr> 
-                <td>Pain Level</td>
-                  <td colspan="5">
-                     <label for="pain">Rate your pain (1 = No Pain, 10 = Worst Pain):</label>
-                      <br><br>
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td>
+            <input type="email" name="email" id="email" placeholder="name@domain.tld" required>
+          </td>
 
-         <span id="rangeValue">1</span>
-    <input type="range" id="pain" name="pain" min="1" max="10" value="1" 
-           oninput="document.getElementById('rangeValue').textContent = this.value" 
-           style="width: 100%; max-width: 300px; vertical-align: middle;">
-                     </td>
-</tr>
-              <!--next row that asks for vaccination-->
-                
-                <tr>
-<td>Vaccinated?</td>
-                  
-                    <td colspan="5">
-<input type="radio" name="vaccine"> Yes
-<input type="radio" name="vaccine"> No
+          <td><label for="phone">Phone</label></td>
+          <td>
+            <input type="tel" id="phone" name="phone" placeholder="000-000-0000" pattern="^\d{3}-\d{3}-\d{4}$">
+          </td>
+        </tr>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>Insurance?</td>
-                    <td colspan="5">
-<input type="radio" name="insurance"> Yes
-<input type="radio" name="insurance"> No
+        <tr>
+          <td>Medical History</td>
+          <td colspan="5">
+            <input type="checkbox" name="history[]" id="history_chickenpox" value="chicken_pox"> <label for="history_chickenpox">Chicken Pox</label><br>
+            <input type="checkbox" name="history[]" id="history_measles" value="measles"> <label for="history_measles">Measles</label><br>
+            <input type="checkbox" name="history[]" id="history_covid" value="covid19"> <label for="history_covid">COVID-19</label><br>
+            <input type="checkbox" name="history[]" id="history_smallpox" value="small_pox"> <label for="history_smallpox">Small Pox</label><br>
+            <input type="checkbox" name="history[]" id="history_tetanus" value="tetanus"> <label for="history_tetanus">Tetanus</label>
+          </td>
+        </tr>
 
-                    </td>
-                </tr>
-             <tr>
-           <td>  <label for="userid">User ID:</label> </td>
-              <td>
-<input type="text"
-       id="userid"
-       name="userid"
-       minlength="4"
-       maxlength="15"
-       required>
-              </td>
-             </tr>
-             
-             <tr>
-              <td>Password</td>
-          
-                    <td>
-<input type="password"
- id="password"
- minlength="8"
-maxlength="20"
-      required
-       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#%^&*()\-_=+\\\/><.,`~])[A-Za-z\d!@#%^&*()\-_=+\\\/><.,`~]{8,30}$"
-       title="8-30 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character (no quotes)">
-     </td>
-              <td>Re-enter Password</td>
+        <tr>
+          <td>Gender</td>
+          <td colspan="5">
+            <input type="radio" name="gender" id="gender_male" value="male"> <label for="gender_male">Male</label>
+            <input type="radio" name="gender" id="gender_female" value="female"> <label for="gender_female">Female</label>
+            <input type="radio" name="gender" id="gender_other" value="other"> <label for="gender_other">Other</label>
+          </td>
+        </tr>
 
-                    <td>
+        <tr>
+          <td>Pain Level</td>
+          <td colspan="5">
+            <label for="pain">Rate your pain (1 = No Pain, 10 = Worst Pain):</label><br><br>
+            <span id="rangeValue">1</span>
+            <input type="range" id="pain" name="pain" min="1" max="10" value="1"
+                   oninput="document.getElementById('rangeValue').textContent = this.value"
+                   style="width: 100%; max-width: 300px; vertical-align: middle;">
+          </td>
+        </tr>
 
-<input type="password"
-maxlength="20"
-required>
+        <tr>
+          <td>Vaccinated?</td>
+          <td colspan="5">
+            <input type="radio" name="vaccine" id="vaccine_yes" value="yes"> <label for="vaccine_yes">Yes</label>
+            <input type="radio" name="vaccine" id="vaccine_no" value="no"> <label for="vaccine_no">No</label>
+          </td>
+        </tr>
 
-                    </td>
+        <tr>
+          <td>Insurance?</td>
+          <td colspan="5">
+            <input type="radio" name="insurance" id="insurance_yes" value="yes"> <label for="insurance_yes">Yes</label>
+            <input type="radio" name="insurance" id="insurance_no" value="no"> <label for="insurance_no">No</label>
+          </td>
+        </tr>
 
-                </tr>
-               <tr>
+        <tr>
+          <td><label for="userid">User ID:</label></td>
+          <td>
+            <input type="text" id="userid" name="userid" minlength="4" maxlength="15" required>
+          </td>
+        </tr>
 
-                    <td colspan="6" align="center">
+        <tr>
+          <td><label for="password">Password</label></td>
+          <td>
+            <input type="password" id="password" name="password" minlength="8" maxlength="20" required
+                   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#%^&*()\-\_=+\\\/><.,`~]).{8,20}"
+                   title="8-20 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character (no quotes)">
+          </td>
 
-<input type="reset"
-value="CLEAR AND START OVER">
+          <td><label for="password_confirm">Re-enter Password</label></td>
+          <td>
+            <input type="password" id="password_confirm" name="password_confirm" minlength="8" maxlength="20" required>
+          </td>
+        </tr>
 
-&nbsp;&nbsp;&nbsp;
+        <tr>
+          <td colspan="6" align="center">
+            <input type="reset" value="CLEAR AND START OVER">
+            &nbsp;&nbsp;&nbsp;
+            <input type="submit" value="Submit">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
 
-<input type="submit"
-value="Submit">
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
- <!--start of footer-->
-    <hr>
+  <hr>
   <div id="footer">
+    <table width="100%">
+      <tr>
+        <td>
+          <h3>Houston Care Medical Center</h3>
+          PO Box 18881<br>
+          Houston, TX 77477
+        </td>
 
-        <table width="100%">
+        <td align="center">
+          <button onclick="window.location.href='https://www.google.com'">Contact Us</button>
+        </td>
 
-            <tr>
-
-                <td>
-
-                    <h3>Houston Care Medical Center</h3>
-
-                    PO Box 18881<br>
-                    Houston, TX 77477
-
-                </td>
-
-                <td align="center">
-
-                    <button onclick="window.location.href='https://www.google.com'">
-                        Contact Us
-                    </button>
-
-                </td>
-
-                <td align="right">
-
-                    <a href="https://facebook.com">Facebook</a><br>
-                    <a href="https://twitter.com">Twitter</a><br>
-                    <a href="https://instagram.com">Instagram</a>
-
-                </td>
-
-            </tr>
-
-        </table>
-
-    </div>
+        <td align="right">
+          <a href="https://facebook.com">Facebook</a><br>
+          <a href="https://twitter.com">Twitter</a><br>
+          <a href="https://instagram.com">Instagram</a>
+        </td>
+      </tr>
+    </table>
+  </div>
 
 </body>
- <!--end of program-->
 </html>
