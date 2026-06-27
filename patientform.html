@@ -12,19 +12,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
   <!--html tag used to link externat css stylesheet to a html document-->
  <!--update style.css to new name of css stylesheet--> <link rel='stylesheet' href='style.css' type='text/css' />
   <!--<script> element either contains scripting statements, or it points to an external script file through the src attribute.-->
-   <!--calls javascript function to display current date--> <script>
-       function displayDate() {
-            const today = new Date();
-          const options = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            };
- document.getElementById("today").innerHTML =
-                today.toLocaleDateString('en-US', options);
-        }
-    </script>
+   <!--calls javascript function to display current date--> <script src="script.js"></script>
   </head>
   <!--starts body section of html visible content layer-->
 <!--triggers displayDate() JavaScript--> <body onload="displayDate()">
@@ -58,7 +46,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
   <!--action attribute dictates destination of form's data if user clicks submit here browser navigates to thankyou.html-->
    <div id="main">
         <form action="thankyou.html" onsubmit="return reviewForm();">
-          
+                   
             <table class="formTable">
                   <!--start of row one of table repersented by tr-->
  <tr>
@@ -67,6 +55,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
                     <td>
                         <input type="text"
                             name="firstname"
+                         id="firstname"
                             maxlength="30"
                             required>
                     </td>
@@ -75,6 +64,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
                     <td>
                         <input type="text"
                             name="middle"
+                         id="middle"
                             maxlength="1"
                             size="1">
                     </td>
@@ -83,6 +73,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
                     <td>
                         <input type="text"
                             name="lastname"
+                         id="lastname"
                             maxlength="30"
                             required>
                     </td>
@@ -93,6 +84,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
                     <td>
                         <input type="date"
                             name="dob"
+                         id="dob"
                             required>
                     </td>
 <td>Social Security</td>
@@ -202,18 +194,20 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
                 <tr>
 
                     <td>Email</td>
-
                     <td>
                         <input type="email"
-                                 placeholder="name@domain.tld"
-                               
+                         name="email"
+                         id="email"
+                                 placeholder="name@domain.tld"      
                             required>
                     </td>              
     <td>Phone</td>
 
                     <td>
                         <input type="tel"
-                            placeholder="000-000-0000">
+                         id="phone
+                        
+                            placeholder="000-000-0000">  
                     </td>
 
                 </tr>
@@ -274,8 +268,12 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
               <td>Password</td>
                     <td>
 <input type="password"
+ id="password"
+ minlength="8"
 maxlength="20"
-required>
+      required
+       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#%^&*()\-_=+\\\/><.,`~])[A-Za-z\d!@#%^&*()\-_=+\\\/><.,`~]{8,30}$"
+       title="8-30 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character (no quotes)">
      </td>
               <td>Re-enter Password</td>
 
