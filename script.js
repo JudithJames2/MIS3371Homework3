@@ -48,13 +48,7 @@ function reviewForm() {
         "Click OK to submit your registration.\n" +
         "Click Cancel to return to the form and edit your information.";
  
-  if (answer == true) {
-        return true;      
-    } else {
-        return false;     
-    }
-}
-
+ 
 
     return confirm(message);
 }
