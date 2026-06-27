@@ -30,6 +30,9 @@ h3{
 #main{
     margin-top:25px;
 }
+#userid:invalid {
+  border-color: #e74c3c;
+}
 .formTable{
     width:95%;
     margin:auto;
