@@ -1,1 +1,164 @@
 
+body{
+    background-color:#eef6fb;
+    color:#333333;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:20px;
+}
+h1{
+    font-family:Georgia, "Times New Roman", serif;
+    color:#004b8d;
+    text-align:center;
+}
+h3{
+    font-family:Georgia, "Times New Roman", serif;
+    color:#005f73;
+    text-align:center;
+}
+#logo {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+}
+
+#header{
+    background-color:#edf9ff;
+    border:2px solid #0b6fa4;
+    padding:20px;
+    border-radius:10px;
+}
+#main{
+    margin-top:25px;
+}
+.formTable{
+    width:95%;
+    margin:auto;
+    border-collapse:collapse;
+    background:white;
+}
+
+.formTable td{
+    padding:10px;
+    vertical-align:top;
+}
+input{
+    padding:6px;
+    border:1px solid #999;
+    border-radius:4px;
+    font-size:15px;
+}
+
+select{
+    padding:6px;
+    border:1px solid #999;
+    border-radius:4px;
+}
+
+textarea{
+    padding:8px;
+    border:1px solid #999;
+    border-radius:4px;
+    width:98%;
+    resize:vertical;
+}
+input[type="text"]{
+    background-color:#ffffff;
+}
+
+input[type="email"]{
+    background-color:#ffffff;
+}
+
+input[type="password"]{
+    background-color:#ffffff;
+}
+
+input[type="date"]{
+    background-color:#ffffff;
+}
+
+input[type="tel"]{
+    background-color:#ffffff;
+}
+input[type="submit"]{
+    background-color:#a2b2ba;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+input[type="submit"]:hover{
+    background-color:#023e8a;
+}
+
+input[type="reset"]{
+    background-color:#6c757d;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+input[type="reset"]:hover{
+    background-color:#ba88a5;
+}
+
+input[type="range"]{
+    width:250px;
+}
+button{
+    background-color:#0b6fa4;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+button:hover{
+    background-color:#084f74;
+}
+#footer{
+    background-color:#d9edf7;
+    border-top:2px solid #0b6fa4;
+    margin-top:30px;
+    padding:20px;
+}
+a{
+    color:#0066cc;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+a:visited{
+    color:pink;
+}
+.formTable input{
+    width:95%;
+}
+
+.formTable select{
+    width:100%;
+}
+
+.formTable textarea{
+    font-family:Arial, Helvetica, sans-serif;
+}
+#today{
+    font-weight:bold;
+    color:#b22222;
+    font-size:16px;
+}
+input[name="firstname"]{
+    font-weight:bold;
+}
+img{
+    border-radius:10px;
+}
