@@ -69,6 +69,7 @@ function reviewForm() {
 
   //validation
 function validateForm() {
+      alert("Validate button clicked!");
 
     let errors = "";
     let errorCount = 0;
