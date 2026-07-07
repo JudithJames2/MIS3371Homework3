@@ -44,9 +44,7 @@ function validateForm() {
 
     // Update email to lowercase
     document.getElementById("email").value = email;
-
     // ===== PERSONAL INFO VALIDATION =====
-
     // First Name
     if (first == "") {
         errorCount++;
@@ -250,7 +248,6 @@ function validateForm() {
 /* ==========================
    Review Before Submit
 ========================== */
-
 function reviewForm() {
     // First validate all fields
     let errorCount = countErrors();
@@ -343,8 +340,7 @@ function countErrors() {
         if (!/(?=.*[A-Z])/.test(password)) errorCount++;
         if (!/(?=.*\d)/.test(password)) errorCount++;
         if (!/(?=.*[!@#%^&*()\-\_=+\\\/><.,`~])/.test(password)) errorCount++;
-    }
-    
+    }    
     if (!passwordConfirm || password !== passwordConfirm) errorCount++;
 
     return errorCount;
