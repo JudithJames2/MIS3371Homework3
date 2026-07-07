@@ -360,3 +360,5 @@ function countErrors() {
 
     return errorCount;
 }
+submitBtn.style.display = "inline-block";
+submitBtn.disabled = false;
