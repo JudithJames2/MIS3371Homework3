@@ -45,14 +45,11 @@ function reviewForm() {
     const firstLower = first.toLowerCase();
     const lastLower = last.toLowerCase();
 
-  
- 
     if ((first && pwLower.includes(firstLower)) || (last && pwLower.includes(lastLower))) {
         alert("Password cannot contain your name.");
         return false;
     }
-
-   
+  
     // Build review message (do not include password/SSN)
     const message =
         "PLEASE REVIEW YOUR INFORMATION\n\n" +
@@ -66,8 +63,6 @@ function reviewForm() {
         "Pain Level: " + pain + "/10\n\n" +
         "Click OK to submit your registration.\n" +
         "Click Cancel to return to the form and edit your information.";
- 
- 
 
     return confirm(message);
 }
