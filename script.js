@@ -270,88 +270,67 @@ return true;
 ========================== */
 
 function reviewForm() {
-    // First validate all fields
-    let errorCount = countErrors();
-    if (errorCount > 0) {
-        alert("Please click VALIDATE and fix all errors before submitting.");
+
+    if (!validateForm()) {
+        alert("Please click VALIDATE and correct the errors before submitting.");
         return false;
     }
 
-    // Collect values for review
-    const first = (document.getElementById("firstname").value || "").trim();
-    const middle = (document.getElementById("middle").value || "").trim();
-    const last = (document.getElementById("lastname").value || "").trim();
-    const dob = (document.getElementById("dob").value || "").trim();
-    const email = (document.getElementById("email").value || "").trim();
-    const phone = (document.getElementById("phone").value || "").trim();
-    const userid = (document.getElementById("userid").value || "").trim();
-    const pain = (document.getElementById("pain").value || "").trim();
+    const first =
+        document.getElementById("firstname").value;
 
-    // Get selected radio button values
-    const gender = document.querySelector('input[name="gender"]:checked');
-    const vaccine = document.querySelector('input[name="vaccine"]:checked');
-    const insurance = document.querySelector('input[name="insurance"]:checked');
+    const middle =
+        document.getElementById("middle").value;
 
-    const genderValue = gender ? gender.value : "Not selected";
-    const vaccineValue = vaccine ? vaccine.value : "Not selected";
-    const insuranceValue = insurance ? insurance.value : "Not selected";
+    const last =
+        document.getElementById("lastname").value;
 
-    // Build review message (do not include password/SSN)
+    const dob =
+        document.getElementById("dob").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const phone =
+        document.getElementById("phone").value;
+
+    const userid =
+        document.getElementById("userid").value;
+
+    const pain =
+        document.getElementById("pain").value;
+
+    const gender =
+        document.querySelector('input[name="gender"]:checked');
+
+    const vaccine =
+        document.querySelector('input[name="vaccine"]:checked');
+
+    const insurance =
+        document.querySelector('input[name="insurance"]:checked');
+
     const message =
         "PLEASE REVIEW YOUR INFORMATION\n\n" +
         "Name: " + first + " " + middle + " " + last + "\n" +
         "Date of Birth: " + dob + "\n" +
-        "Gender: " + genderValue + "\n\n" +
+        "Gender: " + gender.value + "\n\n" +
         "Email: " + email + "\n" +
         "Phone: " + phone + "\n\n" +
         "User ID: " + userid + "\n" +
-        "Vaccinated: " + vaccineValue + "\n" +
-        "Insurance: " + insuranceValue + "\n\n" +
+        "Vaccinated: " + vaccine.value + "\n" +
+        "Insurance: " + insurance.value + "\n" +
         "Pain Level: " + pain + "/10\n\n" +
-        "Click OK to submit your registration.\n" +
-        "Click Cancel to return to the form and edit your information.";
+        "Click OK to submit.\n" +
+        "Click Cancel to continue editing.";
 
     return confirm(message);
-}
 
+}
 /* ==========================
    Helper Function - Count Errors
 ========================== */
 
-function countErrors() {
-    let errorCount = 0;
-    
-    let first = document.getElementById("firstname").value.trim();
-    let middle = document.getElementById("middle").value.trim();
-    let last = document.getElementById("lastname").value.trim();
-    let dob = document.getElementById("dob").value.trim();
-    let ssn = document.getElementById("ssn").value.trim();
-    let address1 = document.getElementById("address1").value.trim();
-    let city = document.getElementById("city").value.trim();
-    let state = document.getElementById("state").value.trim();
-    let zipcode = document.getElementById("zipcode").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let userid = document.getElementById("userid").value.trim();
-    let password = document.getElementById("password").value;
-    let passwordConfirm = document.getElementById("password_confirm").value;
 
-    if (!first || !/^[A-Za-z' -]+$/.test(first)) errorCount++;
-    if (middle != "" && !/^[A-Za-z]$/.test(middle)) errorCount++;
-    if (!last || !/^[A-Za-z' -]+$/.test(last)) errorCount++;
-    if (!dob) errorCount++;
-    if (!ssn || !/^\d{3}-\d{2}-\d{4}$/.test(ssn)) errorCount++;
-    if (!address1) errorCount++;
-    if (!city) errorCount++;
-    if (!state) errorCount++;
-    if (!zipcode || !/^\d{5}(-\d{4})?$/.test(zipcode)) errorCount++;
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errorCount++;
-    if (!phone || !/^\d{3}-\d{3}-\d{4}$/.test(phone)) errorCount++;
-    if (!document.querySelector('input[name="gender"]:checked')) errorCount++;
-    if (!document.querySelector('input[name="vaccine"]:checked')) errorCount++;
-    if (!document.querySelector('input[name="insurance"]:checked')) errorCount++;
-    if (!userid || userid.length < 4 || userid.length > 15 || !/^[a-zA-Z0-9]+$/.test(userid)) errorCount++;
-    
     // Password validation - comprehensive checks
     if (!password) {
         errorCount++;
