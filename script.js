@@ -158,10 +158,7 @@ else if (!/^[A-Za-z .'-]+$/.test(city)) {
     errors += "Select a gender.<br>";
     errorCount++;
 }
-    if (!document.querySelector('input[name="vaccine"]:checked')) {
-    errors += "Select vaccination status.<br>";
-    errorCount++;
-}
+    
     if (!document.querySelector('input[name="vaccine"]:checked')) {
     errors += "Select vaccination status.<br>";
     errorCount++;
