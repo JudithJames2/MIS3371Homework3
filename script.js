@@ -44,6 +44,15 @@ function validateForm() {
     let userid = document.getElementById("userid").value.trim();
     let password = document.getElementById("password").value;
     let passwordConfirm = document.getElementById("password_confirm").value;
+ 
+ const history =
+document.querySelectorAll('input[name="history[]"]:checked');
+
+if(history.length === 0){
+    errorCount++;
+    errors +=
+    "• Please select at least one Medical History item.<br>";
+}
     
     // Update email to lowercase
     document.getElementById("email").value = email;
@@ -346,20 +355,6 @@ function reviewForm() {
 
     return errorCount;
 }
-// Medical History
 
-const history =
-document.querySelectorAll(
-'input[name="history[]"]:checked'
-);
-
-if(history.length === 0){
-
-    errorCount++;
-
-    errors +=
-    "• Please select at least one Medical History item.<br>";
-
-}
 
 
