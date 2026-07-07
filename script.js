@@ -93,3 +93,74 @@ function validateUserId(userId) {
   }
   return "User ID is valid.";
 }
+function validateForm() {
+
+    let errorCount = 0;
+    let errors = "";
+  document.getElementById("submitBtn").disabled = true;
+     let first = document.getElementById("firstname").value.trim();
+    let middle = document.getElementById("middle").value.trim();
+    let last = document.getElementById("lastname").value.trim();
+    let email = document.getElementById("email").value.trim().toLowerCase();
+    let userid = document.getElementById("userid").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+  document.getElementById("email").value = email;
+   if (first == "") {
+        errorCount++;
+        errors += "• First Name is required.<br>";
+    }
+    else if (!/^[A-Za-z' -]+$/.test(first)) {
+        errorCount++;
+        errors += "• First Name contains invalid characters.<br>";
+    }
+     if (middle != "" && !/^[A-Za-z]$/.test(middle)) {
+        errorCount++;
+        errors += "• Middle Initial must be one letter.<br>";
+    }
+
+ if (last == "") {
+        errorCount++;
+        errors += "• Last Name is required.<br>";
+    }
+    else if (!/^[A-Za-z' -]+$/.test(last)) {
+        errorCount++;
+        errors += "• Last Name contains invalid characters.<br>";
+    }
+  if (email == "") {
+        errorCount++;
+        errors += "• Email is required.<br>";
+    }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errorCount++;
+        errors += "• Email format is invalid.<br>";
+    }
+     if (phone != "" &&
+        !/^[0-9()\-\s]+$/.test(phone)) {
+
+        errorCount++;
+        errors += "• Phone number is invalid.<br>";
+    }
+   if (userid == "") {
+        errorCount++;
+        errors += "• User ID is required.<br>";
+    }
+   if (errorCount > 0) {
+
+        document.getElementById("errorMessages").innerHTML =
+            "<h3>Please correct the following errors:</h3>" +
+            errors +
+            "<br><strong>Total Errors: " + errorCount + "</strong>";
+
+        document.getElementById("submitBtn").disabled = true;
+
+    }
+    else {
+
+        document.getElementById("errorMessages").innerHTML =
+            "<span style='color:green;font-weight:bold;'>✔ Validation Successful! No errors were found.</span>";
+
+        document.getElementById("submitBtn").disabled = false;
+
+    }
+
+}
