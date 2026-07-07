@@ -188,3 +188,17 @@ input[type="range"]::-webkit-slider-thumb {
 img{
     border-radius:10px;
 }
+#errorMessages{
+    margin:20px 0;
+    padding:15px;
+    border:2px solid #cc0000;
+    background:#fff5f5;
+    color:#c90808;
+    font-weight:bold;
+}
+
+input:disabled{
+    background:#cccccc;
+    color:#666666;
+    cursor:not-allowed;
+}
