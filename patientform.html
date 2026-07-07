@@ -117,7 +117,7 @@
 
           <td><label for="phone">Phone</label></td>
           <td>
-            <input type="tel" id="phone" name="phone" placeholder="000-000-0000" pattern="^\d{3}-\d{3}-\d{4}$">
+            <input type="tel" id="phone" name="phone" placeholder="000-000-0000" pattern="^\d{3}-\d{3}-\d{4}$" required>
           </td>
         </tr>
 
@@ -183,7 +183,7 @@
                    title="8-20 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character (no quotes)">
             <script>
 function myFunction() {
-  var x = document.getElementById("myPassword");
+  var x = document.getElementById("password");
   if (x.type === "password") {
     x.type = "text";
   } else {
