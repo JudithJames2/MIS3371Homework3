@@ -87,3 +87,9 @@ function isValidUserId(userId) {
     const regex = /^[a-zA-Z0-9]+$/;
     return regex.test(userId);
 }
+function validateUserId(userId) {
+  if (userId.length < 5 || userId.length > 20) {
+    return "User ID must be between 5 and 20 characters long.";
+  }
+  return "User ID is valid.";
+}
