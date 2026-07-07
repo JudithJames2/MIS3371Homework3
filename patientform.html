@@ -32,6 +32,7 @@
 
   <div id="main">
     <form action="thanks.html" method="post" onsubmit="return reviewForm();">
+      <div id="errorMessages"></div>
       <table class="formTable">
         <tr>
           <td><label for="firstname">First Name</label></td>
@@ -193,6 +194,7 @@
             <input type="reset" value="CLEAR AND START OVER">
             &nbsp;&nbsp;&nbsp;
             <input type="button" id = "ValidateBtn" value="VALIDATE" onclick = "validateForm()">
+            <input type="submit" id="submitBtn"  value="SUBMIT" style="display:none;">
           </td>
         </tr>
       </table>
