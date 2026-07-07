@@ -72,25 +72,6 @@ function reviewForm() {
     return confirm(message);
 }
 
-    // Rule: password cannot equal user ID
-    if (password === userid) {
-        alert("Password cannot be the same as User ID.");
-        e.preventDefault();
-        return;
-    }
-
-    // Rule: password cannot contain user ID
-    if (password.includes(userid)) {
-        alert("Password cannot contain your User ID.");
-        e.preventDefault();
-        return;
-    }
-    // Rule: password cannot contain name parts
-    if (
-        password.toLowerCase().includes(firstname) ||
-        password.toLowerCase().includes(lastname)
-    ) {
-        alert("Password cannot contain your name.");
-        e.preventDefault();
-        return;
-    }
+  
+   
+    
