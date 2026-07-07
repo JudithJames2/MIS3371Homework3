@@ -192,11 +192,14 @@
 
         <tr>
           <td colspan="2" align="center">
-            <input type="reset" value="CLEAR AND START OVER">
-            &nbsp;&nbsp;&nbsp;
-            <input type="button" id="ValidateBtn" value="VALIDATE" onclick="validateForm()">
-            &nbsp;&nbsp;&nbsp;
-            <input type="submit" id="submitBtn" value="SUBMIT" disabled style="display:none;">
+            <input
+    type="reset"
+    value="CLEAR AND START OVER"
+    onclick="
+        document.getElementById('submitBtn').style.display='none';
+        document.getElementById('submitBtn').disabled=true;
+        document.getElementById('errorMessages').innerHTML='';
+    ">
           </td>
         </tr>
       </table>
