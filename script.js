@@ -1,24 +1,19 @@
 
 function displayDate() {
-
     const today = new Date();
-
     const options = {
         weekday: "long",
         year: "numeric",
         month: "long",
         day: "numeric"
     };
-
     document.getElementById("today").innerHTML =
         today.toLocaleDateString("en-US", options);
 
 }
-
 /* ==========================
    Review Before Submit
 ========================== */
-
 function reviewForm() {
     // Collect values
     const first = (document.getElementById("firstname").value || "").trim();
@@ -37,12 +32,10 @@ function reviewForm() {
         alert("Passwords do not match. Please re-enter your password.");
         return false; // prevent submission
     }
-
     if (userid && password === userid) {
         alert("Password cannot be the same as User ID.");
         return false;
     }
-
     if (userid && password.includes(userid)) {
         alert("Password cannot contain your User ID.");
         return false;
@@ -52,20 +45,14 @@ function reviewForm() {
     const firstLower = first.toLowerCase();
     const lastLower = last.toLowerCase();
 
-    let first = document.getElementById("firstname").value;
-    let middle = document.getElementById("middle").value;
-    let last = document.getElementById("lastname").value;
-    let dob = document.getElementById("dob").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let userid = document.getElementById("userid").value;
-    let pain = document.getElementById("pain").value;
+  
+ 
     if ((first && pwLower.includes(firstLower)) || (last && pwLower.includes(lastLower))) {
         alert("Password cannot contain your name.");
         return false;
     }
 
-    let message =
+   
     // Build review message (do not include password/SSN)
     const message =
         "PLEASE REVIEW YOUR INFORMATION\n\n" +
@@ -86,19 +73,18 @@ function reviewForm() {
 }
 
     // Rule: password cannot equal user ID
-    if (password === userId) {
+    if (password === userid) {
         alert("Password cannot be the same as User ID.");
         e.preventDefault();
         return;
     }
 
     // Rule: password cannot contain user ID
-    if (password.includes(userId)) {
+    if (password.includes(userid)) {
         alert("Password cannot contain your User ID.");
         e.preventDefault();
         return;
     }
-
     // Rule: password cannot contain name parts
     if (
         password.toLowerCase().includes(firstname) ||
