@@ -31,7 +31,9 @@
   <hr>
 
   <div id="main">
+    
     <form action="thanks.html" method="post" onsubmit="return reviewForm();">
+      
       <div id="errorMessages"></div>
       <table class="formTable">
         <tr>
@@ -188,15 +190,16 @@
             <input type="password" id="password_confirm" name="password_confirm" minlength="8" maxlength="20" required>
           </td>
         </tr>
-
+<!--For validation-->
         <tr>
           <td colspan="6" align="center">
             <input type="reset" value="CLEAR AND START OVER">
             &nbsp;&nbsp;&nbsp;
             <input type="button" id = "ValidateBtn" value="VALIDATE" onclick = "validateForm()">
-            <input type="submit" id="submitBtn"  value="SUBMIT" style="display:none;">
+            <input type="submit" id="submitBtn"  value="SUBMIT" disabled style="display:none;">
           </td>
         </tr>
+        
       </table>
     </form>
   </div>
