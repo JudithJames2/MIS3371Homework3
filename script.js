@@ -344,7 +344,18 @@ function countErrors() {
     if (!document.querySelector('input[name="vaccine"]:checked')) errorCount++;
     if (!document.querySelector('input[name="insurance"]:checked')) errorCount++;
     if (!userid || userid.length < 4 || userid.length > 15 || !/^[a-zA-Z0-9]+$/.test(userid)) errorCount++;
-    if (!password || password.length < 8 || password.length > 20) errorCount++;
+    
+    // Password validation - comprehensive checks
+    if (!password) {
+        errorCount++;
+    } else {
+        if (password.length < 8 || password.length > 20) errorCount++;
+        if (!/(?=.*[a-z])/.test(password)) errorCount++;
+        if (!/(?=.*[A-Z])/.test(password)) errorCount++;
+        if (!/(?=.*\d)/.test(password)) errorCount++;
+        if (!/(?=.*[!@#%^&*()\-\_=+\\\/><.,`~])/.test(password)) errorCount++;
+    }
+    
     if (!passwordConfirm || password !== passwordConfirm) errorCount++;
 
     return errorCount;
