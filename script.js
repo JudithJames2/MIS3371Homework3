@@ -241,21 +241,28 @@ function validateForm() {
     }
 
     // ===== DISPLAY RESULTS =====
-
+const submitBtn = document.getElementById("submitBtn");
     if (errorCount > 0) {
-        document.getElementById("errorMessages").innerHTML =
-            "<h3 style='color:#c90808;'>Please correct the following errors:</h3>" +
-            errors +
-            "<br><strong>Total Errors: " + errorCount + "</strong>";
-        document.getElementById("submitBtn").disabled = true;
-        return false;
-    }
-    else {
-        document.getElementById("errorMessages").innerHTML =
-            "<span style='color:green;font-weight:bold;'>✔ Validation Successful! No errors were found.</span>";
-        document.getElementById("submitBtn").disabled = false;
-        return false; // Don't submit yet, let user review
-    }
+
+    document.getElementById("errorMessages").innerHTML =
+        "<h3 style='color:#c90808;'>Please correct the following errors:</h3>" +
+        errors +
+        "<br><strong>Total Errors: " + errorCount + "</strong>";
+
+    submitBtn.style.display = "none";
+    submitBtn.disabled = true;
+
+    return false;
+
+}
+
+document.getElementById("errorMessages").innerHTML =
+    "<span style='color:green;font-weight:bold;'>✔ Validation Successful! No errors were found. You may now submit the form.</span>";
+
+submitBtn.style.display = "inline-block";
+submitBtn.disabled = false;
+
+return true;
 }
 
 /* ==========================
@@ -360,5 +367,20 @@ function countErrors() {
 
     return errorCount;
 }
-submitBtn.style.display = "inline-block";
-submitBtn.disabled = false;
+// Medical History
+
+const history =
+document.querySelectorAll(
+'input[name="history[]"]:checked'
+);
+
+if(history.length === 0){
+
+    errorCount++;
+
+    errors +=
+    "• Please select at least one Medical History item.<br>";
+
+}
+
+
