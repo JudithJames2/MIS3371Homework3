@@ -31,7 +31,7 @@
   <hr>
 
   <div id="main">
-    <form action="thanks.html" method="post" onsubmit="return reviewForm();">
+<form id="patientForm" action="thanks.html" method="post">
       <div id="errorMessages"></div>
       <table class="formTable">
         <tr>
@@ -195,7 +195,7 @@
             &nbsp;&nbsp;&nbsp;
             <input type="button" id="ValidateBtn" value="VALIDATE" onclick="validateForm()">
             &nbsp;&nbsp;&nbsp;
-            <input type="submit" id="submitBtn" value="SUBMIT" style="display:none;">
+            <input type="submit" id="submitBtn" value="SUBMIT" disabled style="display:none;">
           </td>
         </tr>
       </table>
