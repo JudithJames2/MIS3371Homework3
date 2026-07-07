@@ -50,10 +50,7 @@ function reviewForm() {
         alert("Password cannot contain your User ID.");
         return false;
     }
- function isValidUserId(userid){
-  const regex = /^[a-zA-Z_]/;
-  return regex.test(userId);
-}
+
 
     const pwLower = password.toLowerCase();
     const firstLower = first.toLowerCase();
@@ -79,4 +76,9 @@ function reviewForm() {
         "Click Cancel to return to the form and edit your information.";
 
     return confirm(message);
+}
+function isValidUserId(userId) {
+
+  const regex = /^[a-zA-Z_]/;
+  return regex.test(userId);
 }
