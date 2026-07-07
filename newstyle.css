@@ -208,21 +208,39 @@ img{
     border-radius:10px;
 }
 #errorMessages{
-    margin:20px 0;
+    margin:20px auto;
     padding:15px;
-    border:2px solid #cc0000;
-    background:#fff5f5;
-    color:#c90808;
+    width:95%;
+    border-radius:6px;
     font-weight:bold;
-    display:none;
-}
-
-#errorMessages.show{
     display:block;
 }
+.successMessage{
+    color:#0b7a2a;
+    background:#eefbea;
+    border:2px solid #0b7a2a;
+    padding:12px;
+    border-radius:6px;
+}
+#errorMessages h3{
+    color:#c90808;
+    margin-top:0;
+    text-align:left;
+}
+input:invalid,
+select:invalid{
+    border:2px solid #d9534f;
+}
 
+input:valid,
+select:valid{
+    border:2px solid #5cb85c;
+}
 input:disabled{
     background:#cccccc;
     color:#666666;
     cursor:not-allowed;
+}
+#submitBtn{
+    transition:all .3s ease;
 }
