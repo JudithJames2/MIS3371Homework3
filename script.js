@@ -5,18 +5,15 @@
 
 function displayDate() {
     const today = new Date();
-
     const options = {
         weekday: "long",
         year: "numeric",
         month: "long",
         day: "numeric"
     };
-
     document.getElementById("today").innerHTML =
         today.toLocaleDateString("en-US", options);
 }
-
 /* ==========================
    Validate Form (Before Submit)
 ========================== */
@@ -24,7 +21,7 @@ function displayDate() {
 function validateForm() {
     let errorCount = 0;
     let errors = "";
-    
+
     // Clear previous error messages
     document.getElementById("errorMessages").innerHTML = "";
     document.getElementById("submitBtn").disabled = true;
@@ -44,21 +41,12 @@ function validateForm() {
     let userid = document.getElementById("userid").value.trim();
     let password = document.getElementById("password").value;
     let passwordConfirm = document.getElementById("password_confirm").value;
- 
- const history =
-document.querySelectorAll('input[name="history[]"]:checked');
 
-if(history.length === 0){
-    errorCount++;
-    errors +=
-    "• Please select at least one Medical History item.<br>";
-}
-    
     // Update email to lowercase
     document.getElementById("email").value = email;
 
     // ===== PERSONAL INFO VALIDATION =====
-    
+
     // First Name
     if (first == "") {
         errorCount++;
@@ -84,13 +72,11 @@ if(history.length === 0){
         errorCount++;
         errors += "• Last Name contains invalid characters.<br>";
     }
-
     // Date of Birth
     if (dob == "") {
         errorCount++;
         errors += "• Date of Birth is required.<br>";
     }
-
     // Social Security Number
     if (ssn == "") {
         errorCount++;
@@ -102,13 +88,11 @@ if(history.length === 0){
     }
 
     // ===== ADDRESS VALIDATION =====
-
     // Address Line 1
     if (address1 == "") {
         errorCount++;
         errors += "• Address Line 1 is required.<br>";
     }
-
     // City
     if (city == "") {
         errorCount++;
@@ -120,7 +104,6 @@ if(history.length === 0){
         errorCount++;
         errors += "• State is required.<br>";
     }
-
     // Zip Code
     if (zipcode == "") {
         errorCount++;
@@ -130,7 +113,6 @@ if(history.length === 0){
         errorCount++;
         errors += "• Zip Code format is invalid (12345 or 12345-6789).<br>";
     }
-
     // ===== CONTACT VALIDATION =====
 
     // Email
@@ -142,7 +124,6 @@ if(history.length === 0){
         errorCount++;
         errors += "• Email format is invalid.<br>";
     }
-
     // Phone
     if (phone == "") {
         errorCount++;
@@ -152,7 +133,6 @@ if(history.length === 0){
         errorCount++;
         errors += "• Phone format is invalid (000-000-0000).<br>";
     }
-
     // ===== GENDER VALIDATION =====
     let genderSelected = document.querySelector('input[name="gender"]:checked');
     if (!genderSelected) {
@@ -250,28 +230,21 @@ if(history.length === 0){
     }
 
     // ===== DISPLAY RESULTS =====
-const submitBtn = document.getElementById("submitBtn");
+
     if (errorCount > 0) {
-
-    document.getElementById("errorMessages").innerHTML =
-        "<h3 style='color:#c90808;'>Please correct the following errors:</h3>" +
-        errors +
-        "<br><strong>Total Errors: " + errorCount + "</strong>";
-
-    submitBtn.style.display = "none";
-    submitBtn.disabled = true;
-
-    return false;
-
-}
-
-document.getElementById("errorMessages").innerHTML =
-    "<span style='color:green;font-weight:bold;'>✔ Validation Successful! No errors were found. You may now submit the form.</span>";
-
-submitBtn.style.display = "inline-block";
-submitBtn.disabled = false;
-
-return true;
+        document.getElementById("errorMessages").innerHTML =
+            "<h3 style='color:#c90808;'>Please correct the following errors:</h3>" +
+            errors +
+            "<br><strong>Total Errors: " + errorCount + "</strong>";
+        document.getElementById("submitBtn").disabled = true;
+        return false;
+    }
+    else {
+        document.getElementById("errorMessages").innerHTML =
+            "<span style='color:green;font-weight:bold;'>✔ Validation Successful! No errors were found.</span>";
+        document.getElementById("submitBtn").disabled = false;
+        return false; // Don't submit yet, let user review
+    }
 }
 
 /* ==========================
@@ -279,67 +252,88 @@ return true;
 ========================== */
 
 function reviewForm() {
-
-    if (!validateForm()) {
-        alert("Please click VALIDATE and correct the errors before submitting.");
+    // First validate all fields
+    let errorCount = countErrors();
+    if (errorCount > 0) {
+        alert("Please click VALIDATE and fix all errors before submitting.");
         return false;
     }
 
-    const first =
-        document.getElementById("firstname").value;
+    // Collect values for review
+    const first = (document.getElementById("firstname").value || "").trim();
+    const middle = (document.getElementById("middle").value || "").trim();
+    const last = (document.getElementById("lastname").value || "").trim();
+    const dob = (document.getElementById("dob").value || "").trim();
+    const email = (document.getElementById("email").value || "").trim();
+    const phone = (document.getElementById("phone").value || "").trim();
+    const userid = (document.getElementById("userid").value || "").trim();
+    const pain = (document.getElementById("pain").value || "").trim();
 
-    const middle =
-        document.getElementById("middle").value;
+    // Get selected radio button values
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const vaccine = document.querySelector('input[name="vaccine"]:checked');
+    const insurance = document.querySelector('input[name="insurance"]:checked');
 
-    const last =
-        document.getElementById("lastname").value;
+    const genderValue = gender ? gender.value : "Not selected";
+    const vaccineValue = vaccine ? vaccine.value : "Not selected";
+    const insuranceValue = insurance ? insurance.value : "Not selected";
 
-    const dob =
-        document.getElementById("dob").value;
-
-    const email =
-        document.getElementById("email").value;
-
-    const phone =
-        document.getElementById("phone").value;
-
-    const userid =
-        document.getElementById("userid").value;
-
-    const pain =
-        document.getElementById("pain").value;
-
-    const gender =
-        document.querySelector('input[name="gender"]:checked');
-
-    const vaccine =
-        document.querySelector('input[name="vaccine"]:checked');
-
-    const insurance =
-        document.querySelector('input[name="insurance"]:checked');
-
+    // Build review message (do not include password/SSN)
     const message =
         "PLEASE REVIEW YOUR INFORMATION\n\n" +
         "Name: " + first + " " + middle + " " + last + "\n" +
         "Date of Birth: " + dob + "\n" +
-        "Gender: " + gender.value + "\n\n" +
+        "Gender: " + genderValue + "\n\n" +
         "Email: " + email + "\n" +
         "Phone: " + phone + "\n\n" +
         "User ID: " + userid + "\n" +
-        "Vaccinated: " + vaccine.value + "\n" +
-        "Insurance: " + insurance.value + "\n" +
+        "Vaccinated: " + vaccineValue + "\n" +
+        "Insurance: " + insuranceValue + "\n\n" +
         "Pain Level: " + pain + "/10\n\n" +
-        "Click OK to submit.\n" +
-        "Click Cancel to continue editing.";
+        "Click OK to submit your registration.\n" +
+        "Click Cancel to return to the form and edit your information.";
 
     return confirm(message);
-
 }
 /* ==========================
    Helper Function - Count Errors
 ========================== */
 
+function countErrors() {
+    let errorCount = 0;
 
+    let first = document.getElementById("firstname").value.trim();
+    let middle = document.getElementById("middle").value.trim();
+    let last = document.getElementById("lastname").value.trim();
+    let dob = document.getElementById("dob").value.trim();
+    let ssn = document.getElementById("ssn").value.trim();
+    let address1 = document.getElementById("address1").value.trim();
+    let city = document.getElementById("city").value.trim();
+    let state = document.getElementById("state").value.trim();
+    let zipcode = document.getElementById("zipcode").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let userid = document.getElementById("userid").value.trim();
+    let password = document.getElementById("password").value;
+    let passwordConfirm = document.getElementById("password_confirm").value;
+
+    if (!first || !/^[A-Za-z' -]+$/.test(first)) errorCount++;
+    if (middle != "" && !/^[A-Za-z]$/.test(middle)) errorCount++;
+    if (!last || !/^[A-Za-z' -]+$/.test(last)) errorCount++;
+    if (!dob) errorCount++;
+    if (!ssn || !/^\d{3}-\d{2}-\d{4}$/.test(ssn)) errorCount++;
+    if (!address1) errorCount++;
+    if (!city) errorCount++;
+    if (!state) errorCount++;
+    if (!zipcode || !/^\d{5}(-\d{4})?$/.test(zipcode)) errorCount++;
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errorCount++;
+    if (!phone || !/^\d{3}-\d{3}-\d{4}$/.test(phone)) errorCount++;
+    if (!document.querySelector('input[name="gender"]:checked')) errorCount++;
+    if (!document.querySelector('input[name="vaccine"]:checked')) errorCount++;
+    if (!document.querySelector('input[name="insurance"]:checked')) errorCount++;
+    if (!userid || userid.length < 4 || userid.length > 15 || !/^[a-zA-Z0-9]+$/.test(userid)) errorCount++;
+    if (!password || password.length < 8 || password.length > 20) errorCount++;
+    
     // Password validation - comprehensive checks
     if (!password) {
         errorCount++;
@@ -355,6 +349,4 @@ function reviewForm() {
 
     return errorCount;
 }
-
-
 
