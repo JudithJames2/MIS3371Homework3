@@ -218,7 +218,6 @@ document.getElementById("errorMessages").innerHTML =
 
 submitBtn.style.display = "inline-block";
 submitBtn.disabled = false;
-
 return true;
 }
     
