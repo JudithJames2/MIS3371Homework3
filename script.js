@@ -82,3 +82,8 @@ function isValidUserId(userId) {
   const regex = /^[a-zA-Z_]/;
   return regex.test(userId);
 }
+function isValidUserId(userId) {
+    // Regex allows only uppercase, lowercase, and numbers
+    const regex = /^[a-zA-Z0-9]+$/;
+    return regex.test(userId);
+}
