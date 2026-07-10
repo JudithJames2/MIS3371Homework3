@@ -213,4 +213,63 @@ submitBtn.style.display = "inline-block";
 submitBtn.disabled = false;
 return true;
 }
+//fetch api
+function submitForm() {
+
+    const patient = {
+
+        firstname:
+            document.getElementById("firstname").value,
+
+        lastname:
+            document.getElementById("lastname").value,
+
+        dob:
+            document.getElementById("dob").value,
+
+        email:
+            document.getElementById("email").value,
+
+        phone:
+            document.getElementById("phone").value,
+
+        userid:
+            document.getElementById("userid").value,
+
+        pain:
+            document.getElementById("pain").value
+
+    };
+
+    fetch("submit.php", {
+
+        method: "POST",
+
+        headers: {
+
+            "Content-Type": "application/json"
+
+        },
+
+        body: JSON.stringify(patient)
+
+    })
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        alert("Registration Successful");
+
+        window.location.href = "thanks.html";
+
+    })
+
+    .catch(error => {
+
+        console.log(error);
+
+    });
+
+}
     
