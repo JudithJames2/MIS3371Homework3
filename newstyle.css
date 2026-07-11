@@ -278,8 +278,6 @@ iframe{
 
 }
 
-
-
 #footer table{
     width:100%;
     border-collapse:collapse;
@@ -294,7 +292,6 @@ iframe{
     gap: 8px;
     margin: 6px 0;
 }
-
 .option input[type="checkbox"],
 .option input[type="radio"] {
     margin: 0;
