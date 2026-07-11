@@ -307,3 +307,34 @@ function saveHistory(){
     );
 
 }
+function loadForm(){
+
+    const fields=[
+
+        "firstname",
+        "middle",
+        "lastname",
+        "dob",
+        "address1",
+        "address2",
+        "city",
+        "state",
+        "zipcode",
+        "email",
+        "phone",
+        "userid",
+        "pain"
+
+    ];
+
+    fields.forEach(function(id){
+
+        const value=localStorage.getItem(id);
+
+        if(value){
+            document.getElementById(id).value=value;
+
+        }
+    });
+
+}
