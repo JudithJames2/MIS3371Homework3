@@ -213,6 +213,10 @@ submitBtn.style.display = "inline-block";
 submitBtn.disabled = false;
 return true;
 }
+setCookie("firstname", first, 7);
+setCookie("lastname", last, 7);
+setCookie("email", email, 7);
+setCookie("userid", userid, 7);
 //fetch api
 function submitForm() {
 
