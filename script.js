@@ -288,3 +288,15 @@ function saveField(id){
     }
 
 }
+function saveRadio(group){
+
+    const selected =
+        document.querySelector('input[name="'+group+'"]:checked');
+
+    if(selected){
+
+        localStorage.setItem(group,selected.value);
+
+    }
+
+}
