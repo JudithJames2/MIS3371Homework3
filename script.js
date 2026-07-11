@@ -69,10 +69,7 @@ function reviewForm() {
 
   //validation
 function validateForm() {
-    setCookie("firstname", first, 7);
-setCookie("lastname", last, 7);
-setCookie("email", email, 7);
-setCookie("userid", userid, 7);
+    
       alert("Validate button clicked!");
 
     let errors = "";
@@ -102,6 +99,10 @@ setCookie("userid", userid, 7);
     const userid = document.getElementById("userid").value.trim();
     const password = document.getElementById("password").value;
     const confirm = document.getElementById("password_confirm").value;
+    setCookie("firstname", first, 7);
+setCookie("lastname", last, 7);
+setCookie("email", email, 7);
+setCookie("userid", userid, 7);
     
     if (first === "") {
     errors += "First name is required.<br>";
