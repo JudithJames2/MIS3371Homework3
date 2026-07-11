@@ -32,13 +32,13 @@ function getCookie(cname) {
   return "";
 }
 function checkCookie() {
-  let user = getCookie("username");
+  let user = getCookie("userid");
   if (user != "") {
     alert("Welcome back " + user);
   } else {
      user = prompt("Please enter your name:","");
      if (user != "" && user != null) {
-       setCookie("username", user, 30);
+       setCookie("userid", user, 30);
      }
   }
 }
