@@ -347,7 +347,6 @@ function loadRadios(group){
         let radio=document.querySelector(
 
             'input[name="'+group+'"][value="'+value+'"]'
-
         );
 
         if(radio){
@@ -422,4 +421,8 @@ function clearStorage(){
 
     localStorage.clear();
 
+}
+function savePain() {
+    const pain = document.getElementById("pain").value;
+    localStorage.setItem("pain", pain);
 }
