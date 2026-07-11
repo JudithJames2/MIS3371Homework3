@@ -7,6 +7,47 @@
   <link rel="stylesheet" href="newstyle.css">
 </head>
 <body>
+  <h2 id="welcome"></h2>
+  <script>
+
+function getCookie(cookieName){
+
+    let name = cookieName + "=";
+
+    let decodedCookie = decodeURIComponent(document.cookie);
+
+    let cookieArray = decodedCookie.split(";");
+
+    for(let i=0;i<ca.length;i++){
+
+        let c = ca[i].trim();
+
+        if(c.indexOf(name)==0){
+
+            return c.substring(name.length,c.length);
+
+        }
+
+    }
+
+    return "";
+
+}
+
+window.onload = function(){
+
+    let first = getCookie("firstname");
+
+    if(first != ""){
+
+        document.getElementById("welcome").innerHTML =
+        "Thank you, " + first + "!";
+
+    }
+
+}
+
+</script>
 
 <div id="header">
   <h1>Thank You!</h1>
