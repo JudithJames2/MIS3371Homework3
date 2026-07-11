@@ -193,23 +193,24 @@ function checkCookie() {
             <span id="rangeValue">1</span>
             <input type="range" id="pain" name="pain" min="1" max="10" value="1"
                    oninput="document.getElementById('rangeValue').textContent = this.value"
-                   style="width: 100%; max-width: 300px; vertical-align: middle;">
+                   style="width: 100%; max-width: 300px; vertical-align: middle;"
+          oninput="document.getElementById('rangeValue').textContent=this.value;saveField('pain');">
           </td>
         </tr>
 
         <tr>
           <td>Vaccinated?</td>
           <td colspan="5">
-            <input type="radio" name="vaccine" id="vaccine_yes" value="yes"> <label for="vaccine_yes">Yes</label>
-            <input type="radio" name="vaccine" id="vaccine_no" value="no"> <label for="vaccine_no">No</label>
+            <input type="radio" name="vaccine" id="vaccine_yes" value="yes"onclick="saveRadio('vaccine')"> <label for="vaccine_yes">Yes</label>
+            <input type="radio" name="vaccine" id="vaccine_no" value="no"onclick="saveRadio('vaccine')"> <label for="vaccine_no">No</label>
           </td>
         </tr>
 
         <tr>
           <td>Insurance?</td>
           <td colspan="5">
-            <input type="radio" name="insurance" id="insurance_yes" value="yes"> <label for="insurance_yes">Yes</label>
-            <input type="radio" name="insurance" id="insurance_no" value="no"> <label for="insurance_no">No</label>
+            <input type="radio" name="insurance" id="insurance_yes" value="yes"onclick="saveRadio('insurance')"> <label for="insurance_yes">Yes</label>
+            <input type="radio" name="insurance" id="insurance_no" value="no"onclick="saveRadio('insurance')"> <label for="insurance_no">No</label>
           </td>
         </tr>
 
