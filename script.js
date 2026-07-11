@@ -270,11 +270,9 @@ function submitForm() {
     })
 
     .catch(error => {
-
         console.log(error);
 
     });
-
 }
 //Save Non-Secure Data
 function saveField(id){
@@ -286,17 +284,26 @@ function saveField(id){
         localStorage.setItem(id, field.value);
 
     }
-
 }
 function saveRadio(group){
 
     const selected =
         document.querySelector('input[name="'+group+'"]:checked');
-
     if(selected){
-
         localStorage.setItem(group,selected.value);
 
     }
+}
+function saveHistory(){
+
+    let history=[];
+
+    document.querySelectorAll('input[name="history[]"]:checked')
+    .forEach(item=>history.push(item.value));
+
+    localStorage.setItem(
+        "history",
+        JSON.stringify(history)
+    );
 
 }
