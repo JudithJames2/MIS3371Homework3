@@ -216,7 +216,8 @@ function checkCookie() {
         <tr>
           <td><label for="userid">User ID:</label></td>
           <td>
-            <input type="text" id="userid" name="userid" minlength="4" maxlength="15" required>
+            <input type="text" id="userid" name="userid" minlength="4" maxlength="15" required
+             onblur="saveField('userid')>
           </td>
         </tr>
         <tr>
