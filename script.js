@@ -447,7 +447,6 @@ function clearStorage(){
 
 }
 
-}
 function savePain() {
     const pain = document.getElementById("pain").value;
     localStorage.setItem("pain", pain);
