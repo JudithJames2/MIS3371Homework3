@@ -69,6 +69,10 @@ function reviewForm() {
 
   //validation
 function validateForm() {
+    setCookie("firstname", first, 7);
+setCookie("lastname", last, 7);
+setCookie("email", email, 7);
+setCookie("userid", userid, 7);
       alert("Validate button clicked!");
 
     let errors = "";
@@ -213,10 +217,7 @@ submitBtn.style.display = "inline-block";
 submitBtn.disabled = false;
 return true;
 }
-setCookie("firstname", first, 7);
-setCookie("lastname", last, 7);
-setCookie("email", email, 7);
-setCookie("userid", userid, 7);
+
 //fetch api
 function submitForm() {
 
@@ -419,7 +420,31 @@ window.onload=function(){
 };
 function clearStorage(){
 
-    localStorage.clear();
+     const fields=[
+
+        "firstname",
+        "middle",
+        "lastname",
+        "dob",
+        "address1",
+        "address2",
+        "city",
+        "state",
+        "zipcode",
+        "email",
+        "phone",
+        "userid",
+        "pain",
+        "gender",
+        "insurance",
+        "vaccine",
+        "history"
+
+    ];
+
+    fields.forEach(field=>localStorage.removeItem(field));
+
+}
 
 }
 function savePain() {
