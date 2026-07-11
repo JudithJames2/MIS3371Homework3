@@ -362,7 +362,6 @@ function loadHistory(){
 
     const history=
         JSON.parse(localStorage.getItem("history"));
-
     if(history){
 
         history.forEach(function(item){
@@ -381,4 +380,46 @@ function loadHistory(){
       });
 
     }
+}
+window.onload=function(){
+
+    displayDate();
+
+    const cookie=getCookie("userid");
+
+    if(cookie!=""){
+
+        let answer=confirm(
+
+            "Welcome back "+cookie+
+
+            ". Is this you?"
+
+        );
+
+        if(answer){
+
+            loadForm();
+
+            loadRadios("gender");
+
+            loadRadios("insurance");
+
+            loadRadios("vaccine");
+
+            loadHistory();
+
+        }
+
+        else{
+            clearStorage();
+
+        }
+    }
+
+}
+function clearStorage(){
+
+    localStorage.clear();
+
 }
