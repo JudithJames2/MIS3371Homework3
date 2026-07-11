@@ -288,5 +288,16 @@ iframe{
     vertical-align:middle;
     padding:5px;
 }
+.option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px 0;
+}
+
+.option input[type="checkbox"],
+.option input[type="radio"] {
+    margin: 0;
+}
 
 
