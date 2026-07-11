@@ -272,4 +272,45 @@ function submitForm() {
     });
 
 }
+//cookies
+// Create a cookie
+function setCookie(cname, cvalue, exdays) {
 
+    const date = new Date();
+
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+
+    let expires = "expires=" + date.toUTCString();
+
+    document.cookie =
+        cookieName + "=" + encodeURIComponent(cookieValue) +
+        ";" + expires +
+        ";path=/";
+}
+// Read a cookie
+function getCookie(cname) {
+
+    let name = cname + "=";
+
+    let decodedCookie = decodeURIComponent(document.cookie);
+
+    let ca = decodedCookie.split(";");
+
+    for(let i = 0; i < ca.length; i++){
+
+        let c = ca[i].trim();
+         while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+
+        if(c.indexOf(name) == 0){
+
+            return c.substring(name.length,c.length);
+
+        }
+
+    }
+
+    return "";
+
+}
