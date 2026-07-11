@@ -272,15 +272,4 @@ function submitForm() {
     });
 
 }
-//fixed header
-window.addEventListener("scroll", function(){
-    let header = document.getElementById("header");
 
-    if(window.scrollY > 100){
-        header.classList.add("fixed");
-    }
-    else{
-        header.classList.remove("fixed");
-    }
-});
-    
