@@ -218,9 +218,10 @@ function checkCookie() {
           <td><label for="userid">User ID:</label></td>
           <td>
             <input type="text" id="userid" name="userid" minlength="4" maxlength="15" required
-             onblur="saveField('userid')>
+             onblur="saveField('userid')">
           </td>
         </tr>
+              
         <tr>
           <td><label for="password">Password</label></td>
           <td>
@@ -228,8 +229,7 @@ function checkCookie() {
                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#%^&*()\-\_=+\\\/><.,`~]).{8,20}"
                    title="8-20 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character (no quotes)">
           </td>
-      </tr>
-       <tr>
+   
           <td><label for="password_confirm">Re-enter Password</label></td>
           <td>
             <input type="password" id="password_confirm" name="password_confirm" minlength="8" maxlength="20" required>
