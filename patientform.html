@@ -73,24 +73,28 @@ function checkCookie() {
         <tr>
           <td><label for="firstname">First Name</label></td>
           <td>
-            <input type="text" name="firstname" id="firstname" maxlength="30" required>
+            <input type="text" name="firstname" id="firstname" maxlength="30" required 
+             onblur="saveField('firstname')">
           </td>
 
           <td><label for="middle">Middle Initial</label></td>
           <td>
-            <input type="text" name="middle" id="middle" maxlength="1" size="1">
+            <input type="text" name="middle" id="middle" maxlength="1" size="1"
+             onblur="saveField('middle')">
           </td>
 
           <td><label for="lastname">Last Name</label></td>
           <td>
-            <input type="text" name="lastname" id="lastname" maxlength="30" required>
+            <input type="text" name="lastname" id="lastname" maxlength="30" required
+             onblur="saveField('lastname')">
           </td>
         </tr>
 
         <tr>
           <td><label for="dob">Date of Birth</label></td>
           <td>
-            <input type="date" name="dob" id="dob" required>
+            <input type="date" name="dob" id="dob" required
+             onblur="saveField('dob')">
           </td>
 
           <td><label for="ssn">Social Security</label></td>
@@ -102,21 +106,24 @@ function checkCookie() {
         <tr>
           <td><label for="address1">Address Line 1</label></td>
           <td colspan="5">
-            <input type="text" name="address1" id="address1" maxlength="30" size="60" required>
+            <input type="text" name="address1" id="address1" maxlength="30" size="60" required
+             onblur="saveField('address1')">
           </td>
         </tr>
 
         <tr>
           <td><label for="address2">Address Line 2</label></td>
           <td colspan="5">
-            <input type="text" name="address2" id="address2" maxlength="30" size="60">
+            <input type="text" name="address2" id="address2" maxlength="30" size="60"
+             onblur="saveField('address2')">
           </td>
         </tr>
 
         <tr>
           <td><label for="city">City</label></td>
           <td>
-            <input type="text" name="city" id="city" maxlength="30" required>
+            <input type="text" name="city" id="city" maxlength="30" required
+             onblur="saveField('city')">
           </td>
 
           <td><label for="state">State</label></td>
@@ -140,19 +147,22 @@ function checkCookie() {
           </td>
           <td><label for="zipcode">Zip Code</label></td>
           <td>
-            <input type="text" name="zipcode" id="zipcode" maxlength="10" required>
+            <input type="text" name="zipcode" id="zipcode" maxlength="10" required
+             onblur="saveField('zipcode')">
           </td>
         </tr>
 
         <tr>
           <td><label for="email">Email</label></td>
           <td>
-            <input type="email" name="email" id="email" placeholder="name@domain.tld" required>
+            <input type="email" name="email" id="email" placeholder="name@domain.tld" required
+             onblur="saveField('email')">
           </td>
 
           <td><label for="phone">Phone</label></td>
           <td>
-            <input type="tel" id="phone" name="phone" placeholder="000-000-0000" pattern="^\d{3}-\d{3}-\d{4}$" required>
+            <input type="tel" id="phone" name="phone" placeholder="000-000-0000" pattern="^\d{3}-\d{3}-\d{4}$" required
+             onblur="saveField('phone')">
           </td>
         </tr>
 
@@ -170,9 +180,9 @@ function checkCookie() {
         <tr>
           <td>Gender</td>
           <td colspan="5">
-            <input type="radio" name="gender" id="gender_male" value="male"> <label for="gender_male">Male</label>
-            <input type="radio" name="gender" id="gender_female" value="female"> <label for="gender_female">Female</label>
-            <input type="radio" name="gender" id="gender_other" value="other"> <label for="gender_other">Other</label>
+            <input type="radio" name="gender" id="gender_male" value="male"onclick="saveRadio('gender')"> <label for="gender_male">Male</label>
+            <input type="radio" name="gender" id="gender_female" value="female"onclick="saveRadio('gender')"> <label for="gender_female">Female</label>
+            <input type="radio" name="gender" id="gender_other" value="other"onclick="saveRadio('gender')"> <label for="gender_other">Other</label>
           </td>
         </tr>
 
