@@ -416,7 +416,7 @@ window.onload=function(){
         }
     }
 
-}
+};
 function clearStorage(){
 
     localStorage.clear();
