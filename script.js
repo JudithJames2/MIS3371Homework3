@@ -276,3 +276,15 @@ function submitForm() {
     });
 
 }
+//Save Non-Secure Data
+function saveField(id){
+
+    const field = document.getElementById(id);
+
+    if(field){
+
+        localStorage.setItem(id, field.value);
+
+    }
+
+}
