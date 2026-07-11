@@ -338,3 +338,47 @@ function loadForm(){
     });
 
 }
+function loadRadios(group){
+
+    const value=localStorage.getItem(group);
+
+    if(value){
+
+        let radio=document.querySelector(
+
+            'input[name="'+group+'"][value="'+value+'"]'
+
+        );
+
+        if(radio){
+
+            radio.checked=true;
+
+        }
+    }
+
+}
+function loadHistory(){
+
+    const history=
+        JSON.parse(localStorage.getItem("history"));
+
+    if(history){
+
+        history.forEach(function(item){
+
+            let box=document.querySelector(
+
+                'input[value="'+item+'"]'
+
+            );
+
+            if(box){
+                box.checked=true;
+
+            }
+
+      });
+
+    }
+}
