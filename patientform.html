@@ -167,26 +167,63 @@ function checkCookie() {
           </td>
         </tr>
 
-        <tr>
-          <td>Medical History</td>
-          <td colspan="5">
-            <input type="checkbox" name="history[]" id="history_chickenpox" value="chicken_pox"onclick="saveHistory()"> <label for="history_chickenpox">Chicken Pox</label><br>
-            <input type="checkbox" name="history[]" id="history_measles" value="measles"onclick="saveHistory()"> <label for="history_measles">Measles</label><br>
-            <input type="checkbox" name="history[]" id="history_covid" value="covid19"onclick="saveHistory()"> <label for="history_covid">COVID-19</label><br>
-            <input type="checkbox" name="history[]" id="history_smallpox" value="small_pox"onclick="saveHistory()"> <label for="history_smallpox">Small Pox</label><br>
-            <input type="checkbox" name="history[]" id="history_tetanus" value="tetanus"onclick="saveHistory()"> <label for="history_tetanus">Tetanus</label>
-          </td>
-        </tr>
+       <tr>
+    <td>Medical History</td>
+    <td colspan="5">
+        <label class="option">
+            <input type="checkbox" name="history[]" id="history_chickenpox"
+                   value="chicken_pox" onclick="saveHistory()">
+            Chicken Pox
+        </label><br>
 
-        <tr>
-          <td>Gender</td>
-          <td colspan="5">
-            <input type="radio" name="gender" id="gender_male" value="male"onclick="saveRadio('gender')"> <label for="gender_male">Male</label>
-            <input type="radio" name="gender" id="gender_female" value="female"onclick="saveRadio('gender')"> <label for="gender_female">Female</label>
-            <input type="radio" name="gender" id="gender_other" value="other"onclick="saveRadio('gender')"> <label for="gender_other">Other</label>
-          </td>
-        </tr>
+        <label class="option">
+            <input type="checkbox" name="history[]" id="history_measles"
+                   value="measles" onclick="saveHistory()">
+            Measles
+        </label><br>
 
+        <label class="option">
+            <input type="checkbox" name="history[]" id="history_covid"
+                   value="covid19" onclick="saveHistory()">
+            COVID-19
+        </label><br>
+
+        <label class="option">
+            <input type="checkbox" name="history[]" id="history_smallpox"
+                   value="small_pox" onclick="saveHistory()">
+            Small Pox
+        </label><br>
+
+        <label class="option">
+            <input type="checkbox" name="history[]" id="history_tetanus"
+                   value="tetanus" onclick="saveHistory()">
+            Tetanus
+        </label>
+    </td>
+</tr>
+
+     <tr>
+    <td>Gender</td>
+    <td colspan="5">
+        <label class="option">
+            <input type="radio" name="gender" id="gender_male"
+                   value="male" onclick="saveRadio('gender')">
+            Male
+        </label><br>
+
+        <label class="option">
+            <input type="radio" name="gender" id="gender_female"
+                   value="female" onclick="saveRadio('gender')">
+            Female
+        </label><br>
+
+        <label class="option">
+            <input type="radio" name="gender" id="gender_other"
+                   value="other" onclick="saveRadio('gender')">
+            Other
+        </label>
+    </td>
+</tr>
         <tr>
           <td>Pain Level</td>
           <td colspan="5">
